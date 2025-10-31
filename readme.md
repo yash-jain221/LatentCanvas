@@ -1,21 +1,20 @@
-# 🌀 LatentCanvas
+# LatentCanvas
 
 **Interactive latent diffusion playground** where users can generate and visualize images step-by-step from text prompts, powered by a custom UNet‑CLIP‑VAE pipeline and a Streamlit-based UI.
 
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ Step-wise image generation visualization  
-- ✅ Support for **DDPM** and **DDIM** samplers  
-- ✅ Real-time prompt input, seed and step customization  
-- ✅ Replay & slider-based inspection  
-- ✅ Save final output as PNG  
-- ✅ Efficient GPU memory management  
+- Step-wise image generation visualization  
+- Support for **DDPM** sampler
+- Real-time prompt input, seed and step customization  
+- Replay & slider-based inspection  
+- Save final output as PNG
 
 ---
 
-## 🛠️ Architecture Overview
+## Architecture Overview
 
 ![alt text](https://github.com/yash-jain221/basic_ddpm_clone/blob/master/architecture.png?raw=true)
 
@@ -28,7 +27,7 @@
 
 ---
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ```bash
 git clone https://github.com/yash-jain221/basic_ddpm_clone.git
@@ -45,7 +44,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 🎯 How to Use
+## How to Use
 
 1. Enter a text **prompt** (e.g. `a city floating in space, cinematic`).
 2. Choose sampler: **DDPM** or **DDIM**.
@@ -56,64 +55,21 @@ streamlit run app.py
 
 ---
 
-## 🧠 Behind the Scenes
+## Behind the Scenes
 
-### 🧩 Latent Diffusion Models
+### Latent Diffusion Models
 - Images are encoded into a **4-channel latent tensor** using a **VAE encoder**.
-- Diffusion operates on latent space → Faster, more efficient.
+- Diffusion operates on latent space created by VAE.
 
-### 🔄 Samplers
+### Samplers
 - **DDPM**: Classic stochastic sampling with Gaussian noise at each step.
-- **DDIM**: Deterministic version of DDPM (uses η = 0) for consistent results.
 
-### 🔮 Classifier-Free Guidance (CFG)
+### Classifier-Free Guidance (CFG)
 - Merges conditional and unconditional contexts to steer the generation.
 - Controlled via `cfg_scale` (higher = more prompt adherence).
 
-### 🧠 Prompt Encoding
+### Prompt Encoding
 - Uses a **CLIP** text encoder to turn text into conditioning vectors.
-
----
-
-## 📚 Learning Path (What You’ll Understand)
-
-- ✅ DDPM forward/reverse math and theory  
-- ✅ Time embeddings and UNet structure  
-- ✅ How VAE encodes/decodes high-res images  
-- ✅ DDIM derivation (noise-free inference)  
-- ✅ GPU management with `torch.to()` usage  
-
----
-
-## 🔭 Roadmap
-
-- [x] UI support for replay, save, CFG  
-- [ ] Add PNDM & K-LMS samplers  
-- [ ] Inpainting and Img2Img controls  
-- [ ] CFG scale control from sidebar  
-- [ ] Write technical blog post  
-- [ ] Add Three.js 3D viewer?  
-
----
-
-## 💼 Author
-
-This project was built from scratch to understand diffusion models deeply:
-
-- Implemented **UNet + DDPM + DDIM** with math from scratch  
-- Streamlit frontend for inspection and image control  
-- Integrated pretrained **Stable Diffusion** weights  
-- Optimized for **low compute** (dynamic model offloading)  
-
----
-
-## 🤝 Contribute
-
-Feel free to fork or submit PRs!
-
-- Improve speed or batching  
-- Add new visualizations or renderers  
-- Add audio/text-to-image crossover samplers  
 
 ---
 
@@ -128,7 +84,7 @@ Feel free to fork or submit PRs!
 ## 🧠 References
 
 - [DDPM Paper (Ho et al. 2020)](https://arxiv.org/abs/2006.11239)  
-- [DDIM Paper (Song et al. 2021)](https://arxiv.org/abs/2010.02502)  
 - [Stable Diffusion GitHub](https://github.com/CompVis/stable-diffusion)
+- [Diffusion Tutorial Youtube](https://youtu.be/ZBKpAp_6TGI?si=8NdcMyo9AFY99PPF)
 
 
